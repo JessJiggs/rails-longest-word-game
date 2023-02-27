@@ -1,0 +1,45 @@
+<h1> ********* Welcome to the looooooooongest word-game! ********* </h1>
+<br>
+<br>
+
+<h3> _________Your new grid is_________ </h3>
+<h4> <%= @letters %> </h4>
+<br>
+<br>
+
+<h3> _________Your best guess_________ </h3>
+<form action="/score" method ="POST" data-turbo="false">
+<%# you need to POST here to send the input to the controller - default verb is get - so if you wana do something else - add it. %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="guess">
+  <input type="submit" value="Submit!">
+</form>
+
+
+
+
+<%#
+<> here <>
+form (submit = event listener so just use ruby for now)
+
+
+
+pseudo code:
+fetch a random grid  from the array at new method in games controller.
+display the random grid <> here on new html file <> (ie new view)
+display a form for the user from new view
+add event listener for when user clicks submit OR time runs out.
+
+take user input from the form and save it in params
+
+check each letter from your grid is only used once
+  - if true - use the api to check that word is engrish.
+    - if true - calc score - return score
+  - if != true - "soz -not correct input".
+
+ take cals & score from controller - display in score html. %>
+
+
+<%# game settings (random letters),
+with a form for the user to type a word.
+A button to submit this form. %>
